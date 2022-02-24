@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { SingleSelectType } from "../../../../mock/type";
 import { useQuestionContext } from "../../../context/Questions";
 import { ActionType } from "../../../context/Questions/types";
+import { RenderQuestionProps } from "../types";
 
 /**
  * Notes:
@@ -20,10 +21,11 @@ import { ActionType } from "../../../context/Questions/types";
  * manually.
  */
 
-interface Props
-  extends Omit<SingleSelectType, "usersAnswer" | "correctAnswer" | "type"> {}
-
-export function SingleSelect({ answerOptions, id, topic }: Props) {
+export function SingleSelect({
+  answerOptions,
+  id,
+  topic,
+}: RenderQuestionProps<SingleSelectType>) {
   const [selected, setSelected] = useState("");
   const [error, setError] = useState<boolean>(false);
   const [_, dispatch] = useQuestionContext();

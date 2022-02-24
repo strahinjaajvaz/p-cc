@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SingleSelectType } from "../../mock/type";
+import { SingleSelectType, TextInputType } from "../../mock/type";
 
 import { useQuestionContext } from "../context/Questions/Questions";
 import { Slider } from "../shared/Slider";
@@ -48,7 +48,12 @@ export function Questions() {
                 );
               }
               case "TextInput": {
-                return <TextInput key={question.id} />;
+                return (
+                  <TextInput
+                    key={question.id}
+                    {...(question as TextInputType)}
+                  />
+                );
               }
               default: {
                 // mimic logging the response

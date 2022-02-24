@@ -1,20 +1,49 @@
+import { useState } from "react";
+import styled from "styled-components";
+import { TextInputType } from "../../../../mock/type";
 import { useQuestionContext } from "../../../context/Questions";
 import { ActionType } from "../../../context/Questions/types";
+import { RenderQuestionProps } from "../types";
 
-export function TextInput() {
+export function TextInput({ id, topic }: RenderQuestionProps<TextInputType>) {
   const [_, dispatch] = useQuestionContext();
+  const [val, setVal] = useState("");
+  const [error, setError] = useState<boolean>(false);
+
   return (
-    <div>
-      <p>Text</p>
+    <StyledTextInput>
+      <h2>{topic}</h2>
+      <input type="text" onChange={(e) => setVal(e.target.value)} value={val} />
+      {error && <p className="error">Please enter an answer</p>}
       <button
         onClick={() => {
+          if (!val) {
+            setError(true);
+            return;
+          }
+
           dispatch({
             type: ActionType.NEXT_QUESTION,
           });
         }}
       >
-        next
+        Submit
       </button>
-    </div>
+    </StyledTextInput>
   );
 }
+
+const StyledTextInput = styled.div`
+  input {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  button {
+    display: block;
+  }
+
+  p.error {
+    color: var(--error-red);
+  }
+`;
