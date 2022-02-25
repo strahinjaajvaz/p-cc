@@ -8,6 +8,7 @@ import "./styles/normalize.css";
 import questions from "./mock/data.json";
 import { Questions } from "./components/Questions";
 import { Container } from "./components/Container";
+import { Summary } from "./components/Summary";
 
 /**
  * Notes:
@@ -21,7 +22,6 @@ import { Container } from "./components/Container";
  */
 
 function App() {
-  console.log(questions);
   return (
     <>
       <GlobalStyle />
@@ -29,6 +29,7 @@ function App() {
         <Container>
           <h1>Star Wars Quiz</h1>
           <Questions />
+          <Summary />
         </Container>
       </QuestionsProvider>
     </>

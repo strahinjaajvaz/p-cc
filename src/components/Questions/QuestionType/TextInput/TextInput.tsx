@@ -7,23 +7,31 @@ import { RenderQuestionProps } from "../types";
 
 export function TextInput({ id, topic }: RenderQuestionProps<TextInputType>) {
   const [_, dispatch] = useQuestionContext();
-  const [val, setVal] = useState("");
+  const [answer, setAnswer] = useState("");
   const [error, setError] = useState<boolean>(false);
 
   return (
     <StyledTextInput>
       <h2>{topic}</h2>
-      <input type="text" onChange={(e) => setVal(e.target.value)} value={val} />
+      <input
+        type="text"
+        onChange={(e) => setAnswer(e.target.value)}
+        value={answer}
+      />
       {error && <p className="error">Please enter an answer</p>}
       <button
         onClick={() => {
-          if (!val) {
+          if (!answer) {
             setError(true);
             return;
           }
 
           dispatch({
-            type: ActionType.NEXT_QUESTION,
+            type: ActionType.SUBMIT,
+            payload: {
+              id,
+              userAnswer: answer,
+            },
           });
         }}
       >

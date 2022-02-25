@@ -3,7 +3,7 @@ export interface BaseQuestionType {
   type: string;
   correctAnswer: string;
   id: string;
-  usersAnswer?: string;
+  userAnswer?: string;
 }
 
 export interface SingleSelectType extends BaseQuestionType {

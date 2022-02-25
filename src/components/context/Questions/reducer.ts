@@ -1,6 +1,17 @@
 import { Action, ActionType, State } from "./types";
 import { BaseQuestionType } from "../../../mock/type";
 
+/**
+ *
+ * Notes:
+ *
+ * I initially planned on having the user be able to view the summary
+ * questions unsing the next and back functionality. I decided against it
+ * as i wanted them to have all the information infront of them at once.
+ * I'm leaving this in here based on the fact that it could come in handy
+ * for a different flow.
+ */
+
 export function reducer<T extends BaseQuestionType = BaseQuestionType>(
   state: State<T>,
   action: Action
@@ -16,7 +27,7 @@ export function reducer<T extends BaseQuestionType = BaseQuestionType>(
           }
           return question;
         }),
-        completed: state.currentIndex === state.questions.length,
+        completed: state.currentIndex === state.questions.length - 1,
       };
     }
     case ActionType.NEXT_QUESTION: {

@@ -28,7 +28,9 @@ export function Questions() {
   const [{ currentIndex, completed, questions }] = useQuestionContext();
   const questionsLength = questions.length;
 
-  console.log(completed);
+  if (completed) {
+    return null;
+  }
 
   return (
     <StyledQuestions>
@@ -36,32 +38,28 @@ export function Questions() {
         Question {currentIndex + 1} out of {questionsLength}
       </p>
       <Slider numOfItems={questionsLength} offset={currentIndex}>
-        {!completed &&
-          questions.map((question) => {
-            switch (question.type) {
-              case "SingleSelect": {
-                return (
-                  <SingleSelect
-                    key={question.id}
-                    {...(question as SingleSelectType)}
-                  />
-                );
-              }
-              case "TextInput": {
-                return (
-                  <TextInput
-                    key={question.id}
-                    {...(question as TextInputType)}
-                  />
-                );
-              }
-              default: {
-                // mimic logging the response
-                console.error("Sending data to monitoring system");
-                throw new Error(`Invalid question type: ${question.type}`);
-              }
+        {questions.map((question) => {
+          switch (question.type) {
+            case "SingleSelect": {
+              return (
+                <SingleSelect
+                  key={question.id}
+                  {...(question as SingleSelectType)}
+                />
+              );
             }
-          })}
+            case "TextInput": {
+              return (
+                <TextInput key={question.id} {...(question as TextInputType)} />
+              );
+            }
+            default: {
+              // mimic logging the response
+              console.error("Sending data to monitoring system");
+              throw new Error(`Invalid question type: ${question.type}`);
+            }
+          }
+        })}
       </Slider>
     </StyledQuestions>
   );
