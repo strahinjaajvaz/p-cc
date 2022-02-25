@@ -12,10 +12,7 @@ import { BaseQuestionType } from "../../../mock/type";
  * for a different flow.
  */
 
-export function reducer<T extends BaseQuestionType = BaseQuestionType>(
-  state: State<T>,
-  action: Action
-): State<T> {
+export function reducer(state: State, action: Action): State {
   switch (action.type) {
     case ActionType.SUBMIT: {
       return {
