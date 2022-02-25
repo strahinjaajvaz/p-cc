@@ -16,3 +16,7 @@ The task was to create a wizard style questionaire to test a users Star Wars kno
 ## Thoughts on the deisgn
 
 - I really struggled as to where i could make it responsive. As this is a simple application with limited user interaction, i put the responsivenes in the Single Select component and the Summary component.
+
+## Deployment
+
+[https://p-cc.vercel.app/](https://p-cc.vercel.app/)
