@@ -6,9 +6,9 @@ import { ActionType } from "../../../context/Questions/types";
 import { RenderQuestionProps } from "../types";
 
 export function TextInput({ id, topic }: RenderQuestionProps<TextInputType>) {
-  const [_, dispatch] = useQuestionContext();
   const [answer, setAnswer] = useState("");
   const [error, setError] = useState<boolean>(false);
+  const [, dispatch] = useQuestionContext();
 
   return (
     <StyledTextInput>

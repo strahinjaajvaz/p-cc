@@ -28,7 +28,7 @@ export function SingleSelect({
 }: RenderQuestionProps<SingleSelectType>) {
   const [selected, setSelected] = useState("");
   const [error, setError] = useState<boolean>(false);
-  const [_, dispatch] = useQuestionContext();
+  const [, dispatch] = useQuestionContext();
 
   return (
     <StyledSingleSelect>
