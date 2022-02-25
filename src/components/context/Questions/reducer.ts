@@ -1,5 +1,4 @@
 import { Action, ActionType, State } from "./types";
-import { BaseQuestionType } from "../../../mock/type";
 
 /**
  *
