@@ -1,5 +1,5 @@
 import { Questions } from "../Questions/Questions";
-import { render, screen } from "../../test/utils/renderer";
+import { render, screen } from "@testing-library/react";
 import { useQuestionContext } from "../context/Questions";
 
 jest.mock("../context/Questions/Questions", () => ({

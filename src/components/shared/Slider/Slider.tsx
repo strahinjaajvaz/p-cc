@@ -3,14 +3,11 @@ import styled from "styled-components";
 /**
  * Notes:
  *
- * The slider component is used to give a carosel feel to the questions
- * I abstracted the logic so that it can be reused instead of having the css
- * be duplicated throughout the app.
+ * The slider component is used to give a carosel feel to the questions.
  *
- * I did it this was as it used far less css than using a carosel component.
+ * I did it this way as it used far less css than importing a carosel component.
  * The reasoning behind this was that if this was going to be embedded into a
  * customers page, then its a lot more efficient to have just vanilla react
- * without importing a carosel component.
  *
  * As the slider is also a "wrapper" component, i don't think that its worth
  * having tests for it rendering children, you could write tests for its style

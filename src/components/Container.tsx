@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+/**
+ * Notes:
+ *
+ * A simple container that is used to restrict that max width of the
+ * application.
+ */
+
 interface Props {
   children: React.ReactNode;
 }

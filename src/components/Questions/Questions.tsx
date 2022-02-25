@@ -15,6 +15,11 @@ import { TextInput, SingleSelect } from "./QuestionType";
  * then doing prop drilling would be tedious and a waste. In this example, you
  * could pass props down one level.
  *
+ * The component will check if all the questions we're completed. If they aren't
+ * then we return null. This was done so that ALL the logic for this component is
+ * inside the the component itself. I didn't want to expose `useQuestionContext` to
+ * the parent as then it would just be passing it down.
+ *
  * If a question type that we weren't expecting is there, we throw an error. This does
  * three things:
  *  1.  it will notify the dev that the data we have is incorrect or that there is a bug

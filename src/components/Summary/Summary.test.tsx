@@ -1,5 +1,5 @@
 import { Summary } from "./Summary";
-import { render, screen } from "../../test/utils/renderer";
+import { render, screen } from "@testing-library/react";
 import { useQuestionContext } from "../context/Questions/Questions";
 import { QuestionType } from "../context/Questions/types";
 

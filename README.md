@@ -14,3 +14,5 @@ The task was to create a wizard style questionaire to test a users Star Wars kno
 - I left notes throughout the code where i thought an explanation would be useful for why something was done a particular way.
 
 ## Thoughts on the deisgn
+
+- I really struggled as to where i could make it responsive. As this is a simple application with limited user interaction, i put the responsivenes in the Single Select component and the Summary component.

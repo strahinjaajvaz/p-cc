@@ -1,4 +1,4 @@
-import { render, screen } from "../../../test/utils/renderer";
+import { render, screen } from "@testing-library/react";
 import { SummaryTile } from "./SummaryTile";
 
 describe("Summary Tile", () => {

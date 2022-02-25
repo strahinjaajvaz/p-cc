@@ -14,9 +14,9 @@ import { Summary } from "./components/Summary";
  * Notes:
  *
  * Normally, I'd use url based routing but since this is a simple
- * application, I chose it wasn't needed.
+ * application, I decided it wasn't needed.
  *
- * Normally this would be an api fetch or something where we would
+ * This would be an api fetch or something where we would
  * expect it to return a specific type. Due to us importing the file
  * we have to type cast as QuestionType.
  */

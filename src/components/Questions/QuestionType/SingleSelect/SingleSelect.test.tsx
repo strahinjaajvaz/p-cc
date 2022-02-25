@@ -1,5 +1,5 @@
 import { SingleSelect } from "./SingleSelect";
-import { render, screen, fireEvent } from "../../../../test/utils/renderer";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { useQuestionContext } from "../../../context/Questions";
 import { Action, ActionType } from "../../../context/Questions/types";
 
