@@ -3,10 +3,7 @@ import { SingleSelectType, TextInputType } from "../../../mock/type";
 
 export type QuestionType = TextInputType | SingleSelectType;
 
-export type QuestionContextType<T> = [
-  state: State<T>,
-  dispatch: Dispatch<Action>
-];
+export type QuestionContextType = [state: State, dispatch: Dispatch<Action>];
 
 export const enum ActionType {
   SUBMIT = "SUBMIT",
@@ -26,8 +23,8 @@ export type Action =
       type: ActionType.NEXT_QUESTION | ActionType.PREVIOUS_QUESTION;
     };
 
-export type State<T> = {
-  questions: T[];
+export type State = {
+  questions: QuestionType[];
   currentIndex: number;
   completed: boolean;
 };

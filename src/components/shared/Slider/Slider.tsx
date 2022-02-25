@@ -6,6 +6,16 @@ import styled from "styled-components";
  * The slider component is used to give a carosel feel to the questions
  * I abstracted the logic so that it can be reused instead of having the css
  * be duplicated throughout the app.
+ *
+ * I did it this was as it used far less css than using a carosel component.
+ * The reasoning behind this was that if this was going to be embedded into a
+ * customers page, then its a lot more efficient to have just vanilla react
+ * without importing a carosel component.
+ *
+ * As the slider is also a "wrapper" component, i don't think that its worth
+ * having tests for it rendering children, you could write tests for its style
+ * but for this, id rather use something like cypress component tests as it
+ * gives a visual indicator
  */
 
 type SliderProps = {

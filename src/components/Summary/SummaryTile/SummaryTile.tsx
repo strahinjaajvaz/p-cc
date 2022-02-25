@@ -10,11 +10,11 @@ export function SummaryTile({ correctAnswer, userAnswer }: Props) {
   return (
     <StyledSummaryTile correct={correct}>
       {!correct && (
-        <p>
+        <p data-testid="correct-answer">
           Correct Answer: <span>{correctAnswer}</span>
         </p>
       )}
-      <p className="user-answer">
+      <p className="user-answer" data-testid="user-answer">
         Your Answer: <span>{userAnswer}</span>
       </p>
     </StyledSummaryTile>

@@ -1,9 +1,9 @@
 import { createContext, useContext, useReducer } from "react";
 import { reducer } from "./reducer";
-import { Action, QuestionContextType, QuestionType, State } from "./types";
+import { QuestionContextType, QuestionType, State } from "./types";
 
-const QuestionsContext = createContext<QuestionContextType<QuestionType>>([
-  {} as State<QuestionType>,
+const QuestionsContext = createContext<QuestionContextType>([
+  {} as State,
   () => {},
 ]);
 
@@ -13,9 +13,7 @@ interface Props {
 }
 
 export function QuestionsProvider({ children, questions, ...props }: Props) {
-  const [state, dispatch] = useReducer<
-    React.Reducer<State<QuestionType>, Action>
-  >(reducer, {
+  const [state, dispatch] = useReducer(reducer, {
     completed: false,
     currentIndex: 0,
     questions,

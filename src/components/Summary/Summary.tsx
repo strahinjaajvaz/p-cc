@@ -17,7 +17,7 @@ export function Summary() {
   if (!completed) {
     return null;
   }
-  console.log(questions);
+
   const correctAnswers = questions.filter(
     (question) =>
       question.correctAnswer.toLowerCase() ===
@@ -32,19 +32,21 @@ export function Summary() {
           You got {correctAnswers.length} out of {questions.length}
         </p>
       </HeaderContainer>
-      {questions.map(({ topic, correctAnswer, userAnswer }, i) => {
-        return (
-          <div key={topic}>
-            <h3>
-              Q{i + 1}. {topic}
-            </h3>
-            <SummaryTile
-              correctAnswer={correctAnswer}
-              userAnswer={userAnswer!}
-            />
-          </div>
-        );
-      })}
+      <div data-testid="summary-container">
+        {questions.map(({ topic, correctAnswer, userAnswer }, i) => {
+          return (
+            <div key={topic}>
+              <h3>
+                Q{i + 1}. {topic}
+              </h3>
+              <SummaryTile
+                correctAnswer={correctAnswer}
+                userAnswer={userAnswer!}
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }

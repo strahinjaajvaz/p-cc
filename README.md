@@ -12,3 +12,5 @@ The task was to create a wizard style questionaire to test a users Star Wars kno
 ## Design decissions
 
 - I left notes throughout the code where i thought an explanation would be useful for why something was done a particular way.
+
+## Thoughts on the deisgn

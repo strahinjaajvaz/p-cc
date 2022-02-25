@@ -26,11 +26,12 @@ import { TextInput, SingleSelect } from "./QuestionType";
 
 export function Questions() {
   const [{ currentIndex, completed, questions }] = useQuestionContext();
-  const questionsLength = questions.length;
 
   if (completed) {
     return null;
   }
+
+  const questionsLength = questions.length;
 
   return (
     <StyledQuestions>
@@ -38,7 +39,7 @@ export function Questions() {
         Question {currentIndex + 1} out of {questionsLength}
       </p>
       <Slider numOfItems={questionsLength} offset={currentIndex}>
-        {questions.map((question) => {
+        {questions.map((question, i) => {
           switch (question.type) {
             case "SingleSelect": {
               return (
